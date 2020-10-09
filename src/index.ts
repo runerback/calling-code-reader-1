@@ -37,7 +37,17 @@ function readConfig(): Config {
 async function read(config: Config): Promise<CalingCodeModel[]> {
     const rootHtml = await request(config.rootURL, config);
 
-    return [...iterator(rootHtml, config)];
+    const keySet = new Set<string>();
+
+    return [...iterator(rootHtml, config)].filter(it => {
+        const key = `${it.code2}${it.code3}`;
+        if (keySet.has(key)) {
+            return false;
+        }
+
+        keySet.add(key);
+        return true;
+    });
 }
 
 function* iterator(html: string, config: Config): IterableIterator<CalingCodeModel> {
