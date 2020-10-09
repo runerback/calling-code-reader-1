@@ -1,0 +1,5 @@
+{
+    "rootURL": "https://www.countrycode.org/",
+    "cachePath": "./cached/",
+    "output": "callingcodes.json"
+}

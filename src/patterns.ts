@@ -1,0 +1,1 @@
+export const Pattern = /\<tr\>.*?\<td.*?\<a.*?\<\/td\>.*?\<td\>(?<code>(?:\d+-)?\d+).*?\<\/td\>.*?\<td\>(?<code2>[a-zA-Z]{2})\s*\/\s*(?<code3>[a-zA-Z]{3})\<\/td\>.*?\<td\>.*?\<td\>.*?\<td\>.*?\<\/tr\>/;
